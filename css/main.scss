@@ -1,0 +1,163 @@
+.clock-wall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .clock {
+        width: 640px;
+        height: 580px;
+        background-image: url('../images/house.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        .clock-face {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .clock-hour-hand {
+                width: 40px;
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform-origin: 3% 50%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .clock-minute-hand {
+                width: 60px;
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                left: 50%;
+                transform-origin: 3% 50%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .clock-second-hand {
+                width: 60px;
+                position: absolute;
+                z-index: 3;
+                top: 50%;
+                left: 50%;
+                transform-origin: 3% 50%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .clock-pendulum-box {
+        width: 640px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+
+        .clock-pendulum {
+            transform-origin: 50% 0;
+            animation-name: swing;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        .clock-pendulum-music {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .pendulum-box {
+                width: 105px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            span {
+                height: 80px;
+            }
+        }
+
+        .clock-pendulum-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .pendulum-box {
+                width: 115px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            span {
+                height: 110px;
+            }
+        }
+
+        .clock-pendulum-alarm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .pendulum-box {
+                width: 92px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            span {
+                height: 50px;
+            }
+        }
+
+        .clock-pendulum-music, 
+        .clock-pendulum-action,
+        .clock-pendulum-alarm {
+            span {
+                display: inline-block;
+                background-color: black;
+                width: 3px;
+            }
+        }
+    }
+}
+
+@keyframes swing {
+	0% {
+		transform: rotate(-30deg);
+	}
+
+	50% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(30deg);
+	}
+}
